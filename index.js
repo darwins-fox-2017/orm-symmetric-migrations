@@ -8,14 +8,14 @@ let db = require('./models');
 //   })
 // })
 
-// db.Student.getAllData( function(data) {
-//   data.forEach(function(data) {
-//     console.log(data.id);
-//     console.log(data.first_name);
-//     console.log(data.last_name);
-//     console.log(data.full_name);
-//   })
-// })
+db.Student.getAllData( function(data) {
+  data.forEach(function(data) {
+    console.log(data.id);
+    console.log(data.first_name);
+    console.log(data.last_name);
+    console.log(data.full_name);
+  })
+})
 
 // db.Student.getAge( function(data) {
 //   data.forEach(function(data) {
@@ -26,9 +26,14 @@ let db = require('./models');
 // })
 
 
-db.Student.create({ first_name: 'agnes', last_name: 'lasmono', birthday: new Date('1993-04-01'), gender: 'woman', email: 'agneslasmono', height: 160, phone: '08123444'})
-.then(function(task) {
-  console.log('oke coy');
-}).catch(function(err){
-  console.log(err.message);
-})
+// db.Student.create({ first_name: 'agnes', last_name: 'lasmono', birthday: new Date('1993-04-01'), gender: 'woman', email: 'agneslasmono', height: 160, phone: '08123444'})
+// .then(function(task) {
+//   console.log('oke coy');
+// }).catch(function(err){
+//   console.log(err.message);
+// })
+
+// // soal nomor 2
+// db.Student.findAll().then(function(result){
+//   console.log(result);
+// })

@@ -1,10 +1,37 @@
-function tambah(number1, number2) {
-  return number1 + number2
+"use strict"
+let db = require('./models');
+
+function asyncFunc() {
+    return new Promise(
+        function (resolve, reject) {
+            db.Student.findAll()
+            .then(function(result) {
+              let tempFullName = 0
+              result.forEach(function(data) {
+                let fullName = `${data.first_name} ${data.last_name}`
+                db.Student.update({ name: fullName, }, { where: { id: data.id } })
+                .then(function() {
+                  tempFullName++
+                })
+              })
+              if(tempFullName == result.length) {
+                resolve(result);
+              }
+            })
+            .catch(
+              reject(`failed`)
+            )
+        });
 }
 
-function kali(number1, number2) {
-  return number1 * number2
-}
+asyncFunc()
 
-console.log(`hasil pertambahan: ` + tambah(2,3));
-console.log(`hasil perkalian: ` + kali(2,3));
+
+
+// db.Student.findAll().then(function(result){
+//   //console.log(result.first_name);
+//   result.forEach(function(data){
+//     let fullName = `${data.first_name} ${data.last_name}`
+//     db.Student.update({ name: fullName, }, { where: { id: data.id } });
+//   })
+// })

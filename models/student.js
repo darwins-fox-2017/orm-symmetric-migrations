@@ -5,10 +5,13 @@ module.exports = function(sequelize, DataTypes) {
     last_name: DataTypes.STRING,
     gender: DataTypes.STRING,
     birthday: DataTypes.DATE,
+    name: DataTypes.STRING,
     email : {
       type: DataTypes.STRING,
       validate: {
-        isEmail: true
+        isEmail: {
+          msg: 'Format email salah'
+        }
       }
     },
     height: {
@@ -22,8 +25,7 @@ module.exports = function(sequelize, DataTypes) {
             isNumeric: false,
             isAlphanumeric: false
           }
-        },
-    name: DataTypes.STRING
+        }
   }, {
     classMethods: {
       associate: function(models) {
