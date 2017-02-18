@@ -9,10 +9,17 @@ module.exports = {
       Example:
       return queryInterface.createTable('users', { id: Sequelize.INTEGER });
     */
-    return queryInterface.removeColumn('Students','lastname')
+    return queryInterface.removeColumn('Students','firstname')
   },
 
   down: function (queryInterface, Sequelize) {
-    return queryInterface.addColumn('Students','lastname',Sequelize.STRING)
+    /*
+      Add reverting commands here.
+      Return a promise to correctly handle asynchronicity.
+
+      Example:
+      return queryInterface.dropTable('users');
+    */
+    return queryInterface.addColumn('Students','firstname',Sequelize.STRING)
   }
 };
