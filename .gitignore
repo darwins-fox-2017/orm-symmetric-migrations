@@ -1,2 +1,7 @@
 .DS_Store
 node_modules
+..zshrc.swp
+.zshrc.save
+.zshrc.save.1
+.zshrc.save.2
+fonts
