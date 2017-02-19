@@ -1,9 +1,9 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
   var Student = sequelize.define('Student', {
+    Name: DataTypes.STRING,
     // firstName: DataTypes.STRING,
-    Name:DataTypes.STRING,
-    // lastName: DataTypes.STRING,
+    lastName: DataTypes.STRING,
     birthDate: DataTypes.DATE,
     Height:{
       type:DataTypes.INTEGER,
@@ -60,8 +60,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     instanceMethods:{
       getFullName:function(){
-        // return (this.Name + " " + this.lastName)
-        return (this.Name)
+        return (this.Name + " " + this.lastName)
       },
       getAge:function() {
         let today = new Date()
