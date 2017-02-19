@@ -19,13 +19,12 @@ let coba = function(){
             reject(err)
         })
       })
-    })
-
-    Promise.all(willGotoPromiseAll).then(()=>{
-      console.log("success");
-      res()
-    }).catch((err)=>{
-      rej(err)
+      Promise.all(willGotoPromiseAll).then(()=>{
+        console.log("success");
+        res()
+      }).catch((err)=>{
+        rej(err)
+      })
     })
   })
 }
