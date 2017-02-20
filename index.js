@@ -2,10 +2,10 @@
 
 let db = require("./models")
 // db.Students.create({
-//   firstname: "Galis",
-//   lastname: "Braxx",
+//   firstname: "fwef",
+//   lastname: "lerjgmerg",
 //   birthdate: "1996-11-24",
-//   email: "snmljnfwekjfg@gmail.com",
+//   email: "rtyuikl@gmail.com",
 //   height: 170,
 //   Phone: "0812146692919"
 // }).then(function(data) {
@@ -14,7 +14,6 @@ let db = require("./models")
 //   console.log(err.message)
 // })
 
-// db.Students.updateName()
 
 // db.Students.findAll().then(function(students) {
 //   students.forEach(function(student) {
@@ -27,11 +26,11 @@ let db = require("./models")
 //   })
 //
 // })
-//
+
 db.Students.getAllData( function(data) {
   data.forEach(function(data) {
     console.log(data.id);
-    console.log("Full Name :",data.name);
+    console.log("Full Name :",data.full_name);
     console.log("First Name :",data.firstname);
     console.log("Last Name :",data.lastname);
     console.log("Email :",data.email);
@@ -41,16 +40,9 @@ db.Students.getAllData( function(data) {
   })
 })
 
-//
-// function fillFullName() {
-//   db.Students.findAll().then(function(students) {
-//     students.forEach(function(student) {
-//       let newStudent = {}
-//       newStudent['id'] = student.id
-//       newStudent['name'] = student.getFullName()
-//       db.Students.update({name:newStudent.name},{where: {id:newStudent.id}})
-//     })
-//   })
-// }
-//
-// fillFullName()
+
+// db.Students.find({
+//   where: {id: 1}
+// }).then(function(Students) {
+//   console.log()
+// })

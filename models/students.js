@@ -8,7 +8,19 @@ module.exports = function(sequelize, DataTypes) {
               type: DataTypes.STRING,
               unique: true,
               validate: {
-                isEmail: true
+                isEmail: true,
+                isUnique: function(value, next) {
+                  Students.find({
+                    where: {email: value},
+                    attributes: ['id']
+                  }).then(function(student, error) {
+                    if(error) return next(error)
+
+                    if(student) return next('Email address already in use')
+
+                    next()
+                  })
+                }
               }
            },
     height: {
