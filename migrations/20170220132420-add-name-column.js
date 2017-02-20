@@ -1,5 +1,7 @@
 'use strict';
 
+let model = require('../models')
+
 module.exports = {
   up: function (queryInterface, Sequelize) {
     /*
